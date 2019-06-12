@@ -3,6 +3,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 (https://extraextra.netlify.com/)
 
+## TO DO
+1. responsive
+2. localization. automatically return location and appropriate feed
+3. accounts?
+
 ## Available Scripts
 
 In the project directory, you can run:
