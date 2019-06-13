@@ -3,48 +3,38 @@ import React, { useState, useEffect } from "react";
 import Sidebar from "./Sidebar";
 import DarkModeToggle from "./DarkModeToggle";
 
-
-
 const Header = ({ setCategory }) => {
- 
-
   const [menuIsOpen, setMenuOpen] = useState(true);
 
   function toggleMenu() {
     menuIsOpen ? setMenuOpen(false) : setMenuOpen(true);
   }
 
+  // Fire off effect that opens/closes the mobile menu
+  useEffect(
+    () => {
+      const element = window.document.getElementById("nav__links");
 
-    // Fire off effect that opens/closes the mobile menu
-    useEffect(
-      () => {
-        const element = window.document.getElementById("nav__links");
-       
-  
-        if (menuIsOpen) {
-          //console.log("menu buttton OPEN. add close attribute" );
-          //element.setAttribute('menu-theme', 'menu-closed');
-          element.style.height = 0
-          element.style.top = `-25rem`
-        } else {
-         // console.log("menu is CLOSED. remove close attribute to open menu" );
-          //element.removeAttribute('menu-theme');
-          element.style.height = `20.5rem`
-          element.style.top = 0
-        }
-        //console.log(element);
-      },
-      [menuIsOpen] // Only re-call effect when value changes
-      
-    );
-
-
- 
+      if (menuIsOpen) {
+        //console.log("menu buttton OPEN. add close attribute" );
+        //element.setAttribute('menu-theme', 'menu-closed');
+        element.style.height = 0;
+        element.style.top = `-25rem`;
+      } else {
+        // console.log("menu is CLOSED. remove close attribute to open menu" );
+        //element.removeAttribute('menu-theme');
+        element.style.height = `20.5rem`;
+        element.style.top = 0;
+      }
+      //console.log(element);
+    },
+    [menuIsOpen] // Only re-call effect when value changes
+  );
 
   return (
     <nav className="nav lg:flex lg:items-stretch w-full lg:items-center justify-between p-4 fixed w-full z-40 shadow top-0">
       <div className="flex justify-between">
-        <h1 className="logo__text font-semibold text-3xl md:text-4xl tracking-tight md:tracking-normal italic">
+        <h1 className="logo__text font-semibold text-2xl md:text-4xl tracking-tight md:tracking-normal italic">
           Extra Extra <span className="text-lg">read all about it</span>
         </h1>
 
@@ -66,7 +56,10 @@ const Header = ({ setCategory }) => {
         </div>
       </div>
 
-      <div id="nav__links" className="flex flex-col lg:flex-row items-center lg:w-auto lg:flex">
+      <div
+        id="nav__links"
+        className="flex flex-col lg:flex-row items-center lg:w-auto lg:flex"
+      >
         <Sidebar setCategory={setCategory} />
 
         <DarkModeToggle />
