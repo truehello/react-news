@@ -2,7 +2,7 @@ import React, {useState } from 'react'
 
 import Header from './Header'
 import NewsController from './NewsController'
-import Sidebar from './Sidebar'
+
 
 const App = () => {
 
@@ -11,15 +11,15 @@ const App = () => {
 
     return (
       
-      <div className="container">
-        <Header />
+      <>
+        <Header setCategory={setCategory} />
 
         <main>     
-            <Sidebar setCategory={setCategory} />
+            {/* <Sidebar setCategory={setCategory} /> */}
             <NewsController query={category} />
          
         </main>
-      </div>
+      </>
     )
 }
 

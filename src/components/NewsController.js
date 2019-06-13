@@ -33,10 +33,10 @@ const NewsController = ({ query }) => {
   if (fetchTask.pending) return <Loader abort={fetchTask.abort} width="200" />;
   if (!fetchTask.result) return <div>No result</div>;
   return (
-    <ul className="articleList">
-      {fetchTask.result.articles.map((item, index) => (
+    <ul className="articleList p-4">
+      {fetchTask.result.articles.map((item) => (
         <LazyLoad height={200} offset={[-200, 0]} once>
-          <NewsCard item={item} key={index} />
+          <NewsCard item={item} key={item.title} />
         </LazyLoad>
       ))}
     </ul>

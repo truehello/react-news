@@ -10,7 +10,7 @@ const DarkModeToggle = () => {
 
  if(darkMode){
     return(
-        <div className="dark-mode-toggle">
+        <div className="dark-mode-toggle lg:ml-6">
             <button type="button" onClick={() => setDarkMode(false)}>
                 <img className="sun" src={sun} alt="click for light mode" />   
             </button>
@@ -22,7 +22,7 @@ const DarkModeToggle = () => {
 
     return(
 
-        <div className="dark-mode-toggle">
+        <div className="dark-mode-toggle lg:ml-4">
             <button type="button" onClick={() => setDarkMode(true)}>
                 <img className="moon" src={moon} alt="dark mode button" />
             </button>
