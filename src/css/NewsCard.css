@@ -17,11 +17,11 @@
   --bg-color-secondary: rgb(51, 55, 63);
   --heading-color: #fff;
 }
-
+/* 
 [data-theme="menu-closed"]{
   --menu-top: -350px;
   --menu-height: 0;
-}
+} */
 
 
 
@@ -199,6 +199,6 @@ button.dark-switcher {
     position:relative;
     height: 0;
     top: -25rem;
-    transition: all 1s ease;
+    transition: all 0.5s ease;
   }
 }

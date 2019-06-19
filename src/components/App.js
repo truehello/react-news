@@ -8,15 +8,16 @@ const App = () => {
 
   
     const [category, setCategory] = useState("general");
+    const [country, setCountry] = useState("us");
 
     return (
       
       <>
-        <Header setCategory={setCategory} />
+        <Header setCategory={setCategory} setCountry={setCountry} country={country} />
 
         <main>     
             {/* <Sidebar setCategory={setCategory} /> */}
-            <NewsController query={category} />
+            <NewsController query={category} country={country} />
          
         </main>
       </>

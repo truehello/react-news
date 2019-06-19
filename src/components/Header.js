@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 
 import Sidebar from "./Sidebar";
 import DarkModeToggle from "./DarkModeToggle";
+import CountryPicker from "./CountryPicker";
 
-const Header = ({ setCategory }) => {
+const Header = ({ setCategory, setCountry, country }) => {
   const [menuIsOpen, setMenuOpen] = useState(true);
 
   function toggleMenu() {
@@ -19,11 +20,11 @@ const Header = ({ setCategory }) => {
         //console.log("menu buttton OPEN. add close attribute" );
         //element.setAttribute('menu-theme', 'menu-closed');
         element.style.height = 0;
-        element.style.top = `-25rem`;
+        element.style.top = `-28rem`;
       } else {
         // console.log("menu is CLOSED. remove close attribute to open menu" );
         //element.removeAttribute('menu-theme');
-        element.style.height = `20.5rem`;
+        element.style.height = `24.5rem`;
         element.style.top = 0;
       }
       //console.log(element);
@@ -63,6 +64,9 @@ const Header = ({ setCategory }) => {
         <Sidebar setCategory={setCategory} />
 
         <DarkModeToggle />
+
+        <CountryPicker country={country} setCountry={setCountry} />
+
       </div>
     </nav>
   );

@@ -18,10 +18,10 @@ const Err = ({ error }) => (
 const envAPIKey = process.env.REACT_APP_NEWS_API_KEY;
 const newsapiURL = process.env.REACT_APP_NEWS_API_URL;
 
-const NewsController = ({ query }) => {
+const NewsController = ({ query, country }) => {
   const url =
     `${newsapiURL}` +
-    `country=us&category=${query}&` +
+    `country=${country}&category=${query}&` +
     `apiKey=${envAPIKey}`;
 
   const delayTask = useAsyncTaskDelay(500, [query]);
