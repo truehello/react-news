@@ -167,7 +167,7 @@ button.dark-switcher {
 /* layout for main area */
 .articleList {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 1em;
   margin-top: 5rem;
 }

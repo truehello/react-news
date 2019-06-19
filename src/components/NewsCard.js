@@ -2,14 +2,16 @@ import React from "react";
 import { distanceInWordsToNow } from "date-fns";
 import Img from "react-image";
 import Loader from "./Loader";
+import noImageIcon from '../images/meh-rolling-eyes.svg'
 
 const NewsCard = ({ item }) => {
+  //const imgPath = item.urlToImg
   return (
     <a href={item.url} target="_blank" rel="noopener noreferrer">
       <li className="card rounded overflow-hidden shadow-lg mb-4">
         <Img
           className="w-full rounded-top"
-          src={item.urlToImage}
+          src={[item.urlToImage,{noImageIcon}]}
           loader={<Loader />}
           alt={item.title}
         />

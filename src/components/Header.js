@@ -58,7 +58,7 @@ const Header = ({ setCategory }) => {
 
       <div
         id="nav__links"
-        className="flex flex-col lg:flex-row items-center lg:w-auto lg:flex"
+        className="flex flex-col lg:flex-row items-center lg:w-auto lg:flex lg:mt-6"
       >
         <Sidebar setCategory={setCategory} />
 
