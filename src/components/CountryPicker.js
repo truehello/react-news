@@ -9,11 +9,13 @@ const CountryPicker = ({ country, setCountry }) => {
         return;
       };
 
+   
+
   return (
     <select
       onChange={handleChange}
       value={country}
-      className="block appearance-none bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 lg:ml-2 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+      className="dropdown_select block appearance-none border py-3 px-4 lg:ml-2 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
     >
       <option value="us" >US</option>
       <option value="gb" >UK</option>

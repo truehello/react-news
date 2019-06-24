@@ -21,7 +21,7 @@ const NewsCard = ({ item }) => {
         </h2>
 
         <div className="px-6 pb-4">
-          <h1 className="font-bold text-xl mb-2">{item.title}</h1>
+          <h1 className="font-bold text-xl mb-2 tracking-tighter">{item.title}</h1>
           <p className="text-gray-700 text-base tracking-tighter">{item.content}...</p>
         </div>
         <div className="px-6 py-4">

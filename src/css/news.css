@@ -17,12 +17,6 @@
   --bg-color-secondary: rgb(51, 55, 63);
   --heading-color: #fff;
 }
-/* 
-[data-theme="menu-closed"]{
-  --menu-top: -350px;
-  --menu-height: 0;
-} */
-
 
 
 @import url("https://fonts.googleapis.com/css?family=Merriweather|Open+Sans&display=swap");
@@ -104,6 +98,13 @@ button.dark-switcher {
   margin-bottom: 0;
 }
 
+.dropdown_select{
+  background: var(--bg-color-secondary);
+  color: var(--font-color);
+  border-color: var(--font-color);
+  transition: all 2.5s ease;
+}
+
 .moon,
 .sun {
   width: 34px;
@@ -129,25 +130,7 @@ button.dark-switcher {
   }
 }
 
-/* .dark-mode-toggle {
-  display: flex;
-  margin: 0 auto;
-  & > button {
-    font-size: 1.2em;
-    background: none;
-    border: none;
-    color: #ffe600;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    &:last-child {
-      color: #666;
-    }
 
-    &:focus {
-      outline: none;
-    }
-  }
-} */
 
 .dark-mode-toggle button {
   background: none;
