@@ -42,7 +42,7 @@ h5 {
 
 .byline,
 .date {
-  color: var(--primary-secondary);
+  color: var(--secondary-color);
   transition: color 2.5s ease;
 }
 
