@@ -1,9 +1,9 @@
 :root {
   --primary-color: #1b1e24;
-  --secondary-color: #1b1e24;
+  --secondary-color: #4A5568;
   --font-color: #1b1e24;
   --bg-color: #fff;
-  --bg-color-secondary: #fff;
+  --bg-color-secondary: #F7FAFC;
   --heading-color: #1b1e24;
   --menu-top: 0;
   --menu-height: 24rem;
@@ -11,7 +11,7 @@
 
 [data-theme="dark-mode"] {
   --primary-color: #fff;
-  --secondary-color: #fff;
+  --secondary-color: #E2E8F0;
   --font-color: #b3b9c5;
   --bg-color: #1b1e24;
   --bg-color-secondary: rgb(51, 55, 63);
@@ -42,7 +42,7 @@ h5 {
 
 .byline,
 .date {
-  color: var(--primary-color);
+  color: var(--primary-secondary);
   transition: color 2.5s ease;
 }
 

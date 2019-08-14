@@ -16,13 +16,13 @@ const NewsCard = ({ item }) => {
           alt={item.title}
         />
 
-        <h2 className="byline text-sm font-semibold text-gray-700 px-6 pt-6">
+        <h2 className="byline text-xs font-semibold px-6 pt-6">
           {item.source.name}
         </h2>
 
         <div className="px-6 pb-4">
           <h1 className="font-bold text-xl mb-2 tracking-tighter">{item.title}</h1>
-          <p className="text-gray-700 text-base tracking-tighter">{item.content}...</p>
+          <p className="text-gray-700 text-base tracking-tight">{item.content}...</p>
         </div>
         <div className="px-6 py-4">
           <h2 className="date text-sm font-semibold">
