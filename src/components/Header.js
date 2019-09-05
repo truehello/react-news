@@ -1,36 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import Sidebar from "./Sidebar";
 import DarkModeToggle from "./DarkModeToggle";
 import CountryPicker from "./CountryPicker";
 
 const Header = ({ setCategory, setCountry, country }) => {
-  const [menuIsOpen, setMenuOpen] = useState(true);
-
-  function toggleMenu() {
-    menuIsOpen ? setMenuOpen(false) : setMenuOpen(true);
-  }
-
-  // Fire off effect that opens/closes the mobile menu
-  useEffect(
-    () => {
-      const element = window.document.getElementById("nav__links");
-
-      if (menuIsOpen) {
-        //console.log("menu buttton OPEN. add close attribute" );
-        //element.setAttribute('menu-theme', 'menu-closed');
-        element.style.height = 0;
-        element.style.top = `-28rem`;
-      } else {
-        // console.log("menu is CLOSED. remove close attribute to open menu" );
-        //element.removeAttribute('menu-theme');
-        element.style.height = `24.5rem`;
-        element.style.top = 0;
-      }
-      //console.log(element);
-    },
-    [menuIsOpen] // Only re-call effect when value changes
-  );
+  const [isExpanded, toggleMenu] = useState(false);
 
   return (
     <nav className="nav lg:flex lg:items-stretch w-full lg:items-center justify-between p-4 fixed w-full z-40 shadow top-0">
@@ -42,7 +17,7 @@ const Header = ({ setCategory, setCountry, country }) => {
         <div className="block lg:hidden">
           <button
             type="button"
-            onClick={toggleMenu}
+            onClick={() => toggleMenu(!isExpanded)}
             className="flex items-center px-3 py-2 border rounded text-gray-200 border-gray-200 hover:text-gray-600 hover:border-gray-600"
           >
             <svg
@@ -59,14 +34,26 @@ const Header = ({ setCategory, setCountry, country }) => {
 
       <div
         id="nav__links"
-        className="flex flex-col lg:flex-row items-center lg:w-auto lg:flex lg:mt-6"
+        className={`${
+          isExpanded ? `menuOpen` : `menuClosed`
+        } flex flex-col lg:flex-row items-center lg:w-auto lg:flex`}
       >
-        <Sidebar setCategory={setCategory} />
+        <Sidebar
+          setCategory={setCategory}
+          toggleMenu={toggleMenu}
+          isExpanded={isExpanded}
+        />
 
-        <DarkModeToggle />
+        <div className="flex flex-row justify-around w-full">
+          <DarkModeToggle />
 
-        <CountryPicker country={country} setCountry={setCountry} />
-
+          <CountryPicker 
+            country={country} 
+            setCountry={setCountry} 
+            toggleMenu={toggleMenu}
+            isExpanded={isExpanded}
+          />
+        </div>
       </div>
     </nav>
   );
