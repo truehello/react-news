@@ -35,6 +35,11 @@ h5 {
   font-family: "Merriweather", serif;
 }
 
+.fill-current{
+  color: var(--font-color);
+  transition: color 2.5s ease;
+}
+
 .logo__text {
   color: var(--heading-color);
   transition: color 2.5s ease;
