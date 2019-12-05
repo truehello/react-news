@@ -9,13 +9,14 @@ const NewsCard = ({ item }) => {
   return (
     <a href={item.url} target="_blank" rel="noopener noreferrer">
       <li className="card rounded overflow-hidden shadow-lg mb-4">
+      <div className="relative" style={{ paddingBottom: "83.333333%" }}>
         <Img
-          className="w-full rounded-top"
-          src={[item.urlToImage,{noImageIcon}]}
+          className="absolute h-full w-full object-cover rounded-top"
+          src={[item.urlToImage || noImageIcon,{noImageIcon}]}
           loader={<Loader />}
           alt={item.title}
         />
-
+      </div>
         <h2 className="byline text-xs font-semibold px-6 pt-6">
           {item.source.name}
         </h2>
