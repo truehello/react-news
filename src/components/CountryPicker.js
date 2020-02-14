@@ -14,14 +14,14 @@ const CountryPicker = ({ country, setCountry, toggleMenu, isExpanded }) => {
     <select
       onChange={handleChange}
       value={country}
-      className="dropdown_select block appearance-none border py-2 px-3 lg:ml-2 rounded leading-tight focus:outline-none"
+      className="dropdown_select italic tracking-tighter block appearance-none py-1 px-3 lg:mr-2 leading-tight focus:outline-none"
     >
-      <option value="us">US</option>
-      <option value="gb">UK</option>
-      <option value="ca">CAN</option>
+      <option value="us">US Edition</option>
+      <option value="gb">UK Edition</option>
+      <option value="ca">CAN Edition</option>
       <option value="fr">FRA</option>
       <option value="de">GER</option>
-      <option value="au">AUS</option>
+      <option value="au">AUS Edition</option>
     </select>
   );
 };

@@ -105,7 +105,7 @@ button.dark-switcher {
 }
 
 .dropdown_select{
-  background: var(--bg-color-secondary);
+  background: var(--bg-color-primary);
   color: var(--font-color);
   border-color: var(--font-color);
   transition: all 2.5s ease;
@@ -113,7 +113,7 @@ button.dark-switcher {
 
 .moon,
 .sun {
-  width: 34px;
+  width: 25px;
   cursor: pointer;
   transition: 0.5s all ease-in-out;
 }
@@ -210,7 +210,7 @@ figure:hover {
     transition: all 0.5s ease;
   }
   #nav__links.menuOpen{
-    height: 24.5rem;
+    height: 22.5rem;
     top: 0;
   }
   #nav__links.menuClosed{ 
