@@ -33,7 +33,7 @@ const NewsController = ({ query, country }) => {
   if (fetchTask.pending) return <div className="flex items-center justify-center h-screen"><Loader abort={fetchTask.abort} width="200" /></div>
   if (!fetchTask.result) return <div>No result</div>;
   return (
-    <ul className="articleList p-4">
+    <ul className="articleList p-4 lg:px-20 lg:pt-20">
       {fetchTask.result.articles.map((item) => (
         <LazyLoad height={200} key={item.title} offset={[-200, 0]} once>
           <NewsCard item={item} />

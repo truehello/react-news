@@ -8,13 +8,14 @@ const Header = ({ setCategory, setCountry, country }) => {
   const [isExpanded, toggleMenu] = useState(false);
 
   return (
-    <nav className="nav lg:flex lg:items-stretch w-full lg:items-center justify-between p-4 fixed w-full z-40 shadow top-0">
+    <nav className="nav lg:flex lg:flex-col lg:justify-center w-full lg:items-center justify-between p-4 lg:py-1 fixed w-full z-40 top-0">
+      
       <div className="flex justify-between">
-        <h1 className="logo__text font-semibold text-2xl md:text-4xl tracking-tight md:tracking-normal italic">
-          Extra Extra <span className="text-lg">read all about it</span>
+        <h1 className="logo__text font-semibold uppercase text-xl lg:text-4xl tracking-tight md:tracking-normal ">
+          Extra Extra <span className="text-base lg:text-lg">read all about it</span>
         </h1>
 
-        <div className="block lg:hidden">
+        <div className="block md:hidden">
           <button
             type="button"
             onClick={() => toggleMenu(!isExpanded)}
@@ -36,7 +37,7 @@ const Header = ({ setCategory, setCountry, country }) => {
         id="nav__links"
         className={`${
           isExpanded ? `menuOpen` : `menuClosed`
-        } flex flex-col lg:flex-row items-center lg:w-auto lg:flex`}
+        } flex flex-col items-center lg:w-full`}
       >
         <Sidebar
           setCategory={setCategory}
@@ -44,7 +45,7 @@ const Header = ({ setCategory, setCountry, country }) => {
           isExpanded={isExpanded}
         />
 
-        <div className="flex flex-row justify-around w-full">
+        <div className="flex flex-row justify-between lg:justify-end w-full border-t border-b border-black py-2">
           <DarkModeToggle />
 
           <CountryPicker 
