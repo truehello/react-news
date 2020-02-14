@@ -125,6 +125,13 @@ button.dark-switcher {
   transform: scale(1.1);
 }
 
+.masthead{
+  border-top:solid 1px;
+  border-bottom:solid 1px;
+  border-color: var(--secondary-color);
+  transition: 0.75s border-color ease-in-out;
+}
+
 /* Animations */
 
 @keyframes sun_rotate {
@@ -158,7 +165,7 @@ button.dark-switcher {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 2.5rem;
-  margin-top: 5rem;
+  margin-top: 6rem;
 }
 
 /* .category__nav{display:grid; position:fixed;} */
@@ -201,7 +208,7 @@ figure:hover {
 @media screen and (max-width: 600px) {
   .articleList {
     grid-template-columns: 1fr;
-    
+    margin-top: 4rem;
   }
   #nav__links{
     position:relative;

@@ -45,8 +45,8 @@ const Header = ({ setCategory, setCountry, country }) => {
           isExpanded={isExpanded}
         />
 
-        <div className="flex flex-row items-center justify-between w-full border-t border-b border-black py-2">
-          <p className="italic tracking-tight">
+        <div className="masthead flex flex-row items-center justify-between w-full py-2">
+          <p className="date italic tracking-tight">
             {format(new Date(), "dddd MMMM,DD YYYY.")}
           </p>
 

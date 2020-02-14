@@ -37,7 +37,7 @@ const NewsCard = ({ item }) => {
               element="p"
               truncateText="…"
               text={item.content}
-              className="text-gray-700 tracking-tight"
+              className="content-text text-gray-700 tracking-tight"
             />
         </article>
         <div className="py-4 text-right">

@@ -7,6 +7,7 @@ const LoaderArea = styled.div`
   margin: 0px auto;
   display: flex;
   align-items: center;
+  justify-content:center;
   flex-direction: column;
 `;
 
