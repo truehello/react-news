@@ -1,36 +1,36 @@
 const fetch = require("node-fetch");
 
-exports.handler = async (event, context) => {
+//exports.handler = async (event, context) => {
   //const country = event.queryStringParameters.country;
   //const category = event.queryStringParameters.category;
   //const envAPIKey = process.env.REACT_APP_NEWS_API_KEY;
   //const newsapiURL = process.env.REACT_APP_NEWS_API_URL;
 
-const API_ENDPOINT = 'https://cat-fact.herokuapp.com/facts'
+  const API_ENDPOINT = "https://cat-fact.herokuapp.com/facts";
 
-exports.handler = async (event, context) => {
-  let response
-  try {
-    response = await fetch(API_ENDPOINT)
-    // handle response
-  } catch (err) {
-    return {
-      statusCode: err.statusCode || 500,
-      body: JSON.stringify({
-        error: err.message
-      })
+  exports.handler = async (event, context) => {
+    console.log("hello function");
+    let response;
+    try {
+      response = await fetch(API_ENDPOINT);
+      // handle response
+    } catch (err) {
+      return {
+        statusCode: err.statusCode || 500,
+        body: JSON.stringify({
+          error: err.message,
+        }),
+      };
     }
-  }
 
-  return {
-    statusCode: 200,
-    body: `Hello ${response}!`,
-    // body: JSON.stringify({
-    //   data: response
-    // })
-   
-  }
-}
+    return {
+      statusCode: 200,
+      body: `Hello ${response}!`,
+      // body: JSON.stringify({
+      //   data: response
+      // })
+    };
+  };
   // const url =
   //   `${newsapiURL}` +
   //   `country=${country}&category=${category}&`;
@@ -65,4 +65,4 @@ exports.handler = async (event, context) => {
   //     body: JSON.stringify({ msg: err.message }),
   //   };
   // }
-};
+//};
