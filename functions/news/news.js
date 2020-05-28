@@ -9,7 +9,7 @@ const fetch = require("node-fetch");
   const API_ENDPOINT = "https://cat-fact.herokuapp.com/facts";
 
   exports.handler = async (event, context) => {
-    console.log("hello function");
+    console.log("hello function 2");
     let response;
     try {
       response = await fetch(API_ENDPOINT);
@@ -25,10 +25,10 @@ const fetch = require("node-fetch");
 
     return {
       statusCode: 200,
-      body: `Hello ${response}!`,
-      // body: JSON.stringify({
-      //   data: response
-      // })
+      //body: `Hello ${response}!`,
+       body: JSON.stringify({
+         data: response
+       })
     };
   };
   // const url =
