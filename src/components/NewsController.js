@@ -13,10 +13,12 @@ const Err = ({ error }) => (
     Error:{error.name} {error.message}
   </div>
 );
-//const Loading = ({ abort }) => <div>Loading...<button onClick={abort}>Abort</button></div>;
-//const Loading = ({ abort }) => <div>Loading...</div>;
+
+
 const envAPIKey = process.env.REACT_APP_NEWS_API_KEY;
 const newsapiURL = process.env.REACT_APP_NEWS_API_URL;
+
+//const newsAPINode = "/.netlify/functions/news"
 
 const NewsController = ({ query, country }) => {
   const url =
