@@ -10,8 +10,8 @@ const Err = ({ error }) => (
   </div>
 );
 
-//const envAPIKey = process.env.REACT_APP_NEWS_API_KEY;
-//const newsapiURL = process.env.REACT_APP_NEWS_API_URL;
+const envAPIKey = process.env.REACT_APP_NEWS_API_KEY;
+const newsapiURL = process.env.REACT_APP_NEWS_API_URL;
 
 const NewsController = ({ query, country }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -24,15 +24,15 @@ const NewsController = ({ query, country }) => {
       setIsLoading(true);
 
       try {
-        // const result = await axios(
-        //   `${newsapiURL}` +
-        //     `country=${country}&category=${query}&` +
-        //     `apiKey=${envAPIKey}`
-        // );
         const result = await axios(
-          `.netlify/functions/news?` +
-            `country=${country}&category=${query}&`
+          `${newsapiURL}` +
+            `country=${country}&category=${query}&` +
+            `apiKey=${envAPIKey}`
         );
+        // const result = await axios(
+        //   `.netlify/functions/news?` +
+        //     `country=${country}&category=${query}&`
+        // );
 
         setData(result.data);
       
