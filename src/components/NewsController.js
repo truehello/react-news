@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from "react";
 import LazyLoad from "react-lazyload";
 import axios from "axios";
-//import { useAsyncCombineSeq, useAsyncRun } from "react-hooks-async";
-//import { useAsyncTaskDelay } from "react-hooks-async/dist/use-async-task-delay";
-//import { useAsyncTaskFetch } from "react-hooks-async/dist/use-async-task-fetch";
-//import useDataApi from 'use-data-api';
 
 import NewsCard from "./NewsCard";
-//import Loader from "./Loader";
 
 const Err = ({ error }) => (
   <div>
@@ -15,8 +10,8 @@ const Err = ({ error }) => (
   </div>
 );
 
-const envAPIKey = process.env.REACT_APP_NEWS_API_KEY;
-const newsapiURL = process.env.REACT_APP_NEWS_API_URL;
+//const envAPIKey = process.env.REACT_APP_NEWS_API_KEY;
+//const newsapiURL = process.env.REACT_APP_NEWS_API_URL;
 
 const NewsController = ({ query, country }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -29,10 +24,14 @@ const NewsController = ({ query, country }) => {
       setIsLoading(true);
 
       try {
+        // const result = await axios(
+        //   `${newsapiURL}` +
+        //     `country=${country}&category=${query}&` +
+        //     `apiKey=${envAPIKey}`
+        // );
         const result = await axios(
-          `${newsapiURL}` +
-            `country=${country}&category=${query}&` +
-            `apiKey=${envAPIKey}`
+          `.netlify/functions/news?` +
+            `country=${country}&category=${query}&`
         );
 
         setData(result.data);
