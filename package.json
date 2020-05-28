@@ -16,7 +16,8 @@
     "react-spring": "^8.0.20",
     "react-text-truncate": "^0.16.0",
     "react-transition-group": "^4.0.1",
-    "styled-components": "^4.2.0"
+    "styled-components": "^4.2.0",
+    "use-data-api": "^1.0.1"
   },
   "scripts": {
     "build:css": "postcss src/css/tailwind.css -o src/css/index.css",
