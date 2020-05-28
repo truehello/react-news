@@ -17,6 +17,8 @@ exports.handler = async (event, context) => {
         Accept: "*/*",
         "Content-Type": "application/json",
         "X-Api-Key": envAPIKey,
+        'Access-Control-Allow-Origin' : '*',
+        //'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE'
       },
       //body: JSON.stringify(subscriber),
     });
