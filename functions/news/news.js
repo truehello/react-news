@@ -9,9 +9,10 @@ exports.handler = async (event, context) => {
 
   const url = `${newsapiURL}`+`country=${country}&category=${category}`;
   console.log(url)
+
   try {
     const response = await fetch(url, {
-      method: "POST",
+      method: "GET",
       headers: {
         Accept: "*/*",
         "Content-Type": "application/json",
