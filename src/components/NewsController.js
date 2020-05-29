@@ -57,7 +57,7 @@ const NewsController = ({ query, country }) => {
   console.log("hello"+JSON.stringify(data))
   return (
     <ul className="articleList p-4 lg:px-20 lg:pt-20">
-      {data.details.articles.map((item) => (
+      {data.detail.articles.map((item) => (
         <LazyLoad height={200} key={item.title} offset={[-200, 0]} once>
           <NewsCard item={item} />
         </LazyLoad>
