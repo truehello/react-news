@@ -30,7 +30,7 @@ const NewsController = ({ query, country }) => {
         //     `apiKey=${envAPIKey}`
         // );
         const result = await axios(
-          `/.netlify/functions/news?` +
+          `/api/news?` +
             `country=${country}&category=${query}`
         );
 
@@ -57,7 +57,7 @@ const NewsController = ({ query, country }) => {
   console.log("hello"+data)
   return (
     <ul className="articleList p-4 lg:px-20 lg:pt-20">
-      {data.detail.articles.map((item) => (
+      {data.articles.map((item) => (
         <LazyLoad height={200} key={item.title} offset={[-200, 0]} once>
           <NewsCard item={item} />
         </LazyLoad>
