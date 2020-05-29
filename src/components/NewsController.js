@@ -10,8 +10,8 @@ const Err = ({ error }) => (
   </div>
 );
 
-const envAPIKey = process.env.REACT_APP_NEWS_API_KEY;
-const newsapiURL = process.env.REACT_APP_NEWS_API_URL;
+//const envAPIKey = process.env.REACT_APP_NEWS_API_KEY;
+//const newsapiURL = process.env.REACT_APP_NEWS_API_URL;
 
 const NewsController = ({ query, country }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -24,15 +24,15 @@ const NewsController = ({ query, country }) => {
       setIsLoading(true);
 
       try {
-        const result = await axios(
-          `${newsapiURL}` +
-            `country=${country}&category=${query}&` +
-            `apiKey=${envAPIKey}`
-        );
         // const result = await axios(
-        //   `.netlify/functions/news?` +
-        //     `country=${country}&category=${query}&`
+        //   `${newsapiURL}` +
+        //     `country=${country}&category=${query}&` +
+        //     `apiKey=${envAPIKey}`
         // );
+        const result = await axios(
+          `/.netlify/functions/news?` +
+            `country=${country}&category=${query}`
+        );
 
         setData(result.data);
       
@@ -54,10 +54,10 @@ const NewsController = ({ query, country }) => {
     );
   if (isError) return <Err error={isError} />;
   if (!data) return <div>No result</div>;
-  //console.log(data)
+  console.log("hello"+data)
   return (
     <ul className="articleList p-4 lg:px-20 lg:pt-20">
-      {data.articles.map((item) => (
+      {data.detail.articles.map((item) => (
         <LazyLoad height={200} key={item.title} offset={[-200, 0]} once>
           <NewsCard item={item} />
         </LazyLoad>
