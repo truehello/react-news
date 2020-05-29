@@ -1,3 +1,6 @@
+[Settings]
+  ID = "9bd0f60b-3cda-475f-90fc-a49c917fe3ba"
+
 # The following redirect is intended for use with most SPAs that handle
 # routing internally.
 [[redirects]]
