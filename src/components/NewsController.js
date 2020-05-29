@@ -30,7 +30,7 @@ const NewsController = ({ query, country }) => {
         //     `apiKey=${envAPIKey}`
         // );
         const result = await axios(
-          `/api/news?` +
+          `/.netlify/functions/news?` +
             `country=${country}&category=${query}`
         );
 
