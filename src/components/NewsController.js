@@ -54,7 +54,7 @@ const NewsController = ({ query, country }) => {
     );
   if (isError) return <Err error={isError} />;
   if (!data) return <div>No result</div>;
-  console.log("hello"+data)
+  console.log("hello"+JSON.stringify(data))
   return (
     <ul className="articleList p-4 lg:px-20 lg:pt-20">
       {data.details.articles.map((item) => (
