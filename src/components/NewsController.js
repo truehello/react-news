@@ -34,7 +34,7 @@ const NewsController = ({ query, country }) => {
             `country=${country}&category=${query}`
         );
 
-        setData(result.data);
+        setData(result.data.detail);
       
       } catch (error) {
         setIsError(true);
@@ -53,11 +53,12 @@ const NewsController = ({ query, country }) => {
       </div>
     );
   if (isError) return <Err error={isError} />;
-  if (!data) return <div>No result</div>;
-  console.log("hello 2 "+JSON.stringify(data))
+  if (!data) return <div className="flex items-center justify-center h-screen">No result</div>;
+  //console.log("hello 2 "+JSON.stringify(data))
   return (
     <ul className="articleList p-4 lg:px-20 lg:pt-20">
-      {data.map((item) => (
+      {/* {JSON.stringify(data)} */}
+      {data.articles.map((item) => (
         <LazyLoad height={200} key={item.title} offset={[-200, 0]} once>
           <NewsCard item={item} />
         </LazyLoad>
